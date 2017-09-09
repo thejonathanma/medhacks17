@@ -78,13 +78,17 @@ WSGI_APPLICATION = 'medhacks17.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    #
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'medhacks17',
 
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'medhacks17',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': ''
 }
 
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

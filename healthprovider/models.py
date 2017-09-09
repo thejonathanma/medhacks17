@@ -21,21 +21,20 @@ class Provider(models.Model):
     office_address = models.TextField(default = "")
     office_city = models.CharField(max_length=200, default="")
     office_state = models.CharField(max_length=200, default="")
-    
+
     def __str__(self):
         return self.first_name + " " + self.last_name
 
 class ProviderForm(ModelForm):
-class Meta:
-    model = Provider
-    fields = '__all__'
-    # exclude = ['user']
-
+    class Meta:
+        model = Provider
+        fields = '__all__'
+        # exclude = ['user']
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
-if created:
-    Provider.objects.create(user=instance, first_name=instance.first_name, last_name=instance.last_name)
+    if created:
+        Provider.objects.create(user=instance, first_name=instance.first_name, last_name=instance.last_name)
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
-instance.provider.save()
+    instance.provider.save()
