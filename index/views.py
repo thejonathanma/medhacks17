@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from index.models import UserForm
 from patient.models import PatientForm, Patient
+from healthprovider.models import ProvderForm, Provider
 
 from django.contrib.auth import authenticate, login
 
