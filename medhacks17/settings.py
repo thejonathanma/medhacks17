@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'index.apps.IndexConfig',
     'patient.apps.PatientConfig',
-    'phonenumber_field'
+    'healthprovider.apps.HealthproviderConfig'
 ]
 
 MIDDLEWARE = [
@@ -77,14 +77,14 @@ WSGI_APPLICATION = 'medhacks17.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'test',
-    #     'USER': 'jonathan',
-    #     'PASSWORD': '',
-    #     'HOST': 'localhost',
-    #     'PORT': '',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'medhacks17',
+        'USER': 'jonathan',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
 }
 
 

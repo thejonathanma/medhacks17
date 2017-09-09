@@ -22,6 +22,13 @@ class Patient(models.Model):
     state = models.CharField(max_length=200, default='')
     zip_code = models.CharField(max_length=5, default='')
 
+    USER_TYPE_CHOICES = (
+        ('P', 'Patient'),
+        ('H', 'HealthProvider')
+    )
+
+    user_type = models.CharField(max_length=1, choices=USER_TYPE_CHOICES, default='P')
+
     def __str__(self):
         return self.first_name + " " + self.last_name
 
