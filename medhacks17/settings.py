@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'index.apps.IndexConfig',
     'patient.apps.PatientConfig',
-    'phonenumber_field'
+    'healthprovider.apps.HealthproviderConfig'
 ]
 
 MIDDLEWARE = [
