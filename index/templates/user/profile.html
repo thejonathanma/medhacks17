@@ -8,19 +8,19 @@
 {% block content %}
 <div class="profile border">
     <div class="profile-header">
-        {% with patient.profile_picture as url %}
+        {% with profile.profile_picture as url %}
         {% with "/static/index/images/"|addstr:url as prof_pic %}
         <div class="image" style="background-image: url('{{prof_pic}}');"></div>
         {% endwith %}
         {% endwith %}
         <div class="profile-header-text border">
-            <h1 class="profile-header-text-title">Welcome, {{patient.first_name}} {{patient.last_name}}</h1>
+            <h1 class="profile-header-text-title">Welcome, {{profile.first_name}} {{profile.last_name}}</h1>
             <div class="border ">
-                <h3>DOB: {{patient.dob}}</h3>
-                <h3>Insurance: {{patient.insurance}}</h3>
+                <h3>DOB: {{profile.dob}}</h3>
+                <h3>Insurance: {{profile.insurance}}</h3>
                 <h3>Email: {{user.email}}</h3>
-                <h3>Phone Number: {{patient.phone_number}}</h3>
-                <h3>Address: {{patient.address}}, {{patient.city}}, {{patient.state}}, {{patient.zip_code}}</h3>
+                <h3>Phone Number: {{profile.phone_number}}</h3>
+                <h3>Address: {{profile.address}}, {{profile.city}}, {{profile.state}}, {{profile.zip_code}}</h3>
             </div>
             <div class="profile-header-options">
                 <a><h2>Medical Record</h2></a>

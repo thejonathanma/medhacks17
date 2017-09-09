@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.forms import ModelForm
-from django.contrib.auth.models import User
+from index.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.contrib.postgres.fields import ArrayField
@@ -21,13 +21,6 @@ class Provider(models.Model):
     state = models.CharField(max_length=200, default="")
     zip_code = models.CharField(max_length=5, default="")
 
-    USER_TYPE_CHOICES = (
-        ('P', 'Patient'),
-        ('H', 'HealthProvider')
-    )
-
-    user_type = models.CharField(max_length=1, choices=USER_TYPE_CHOICES, default='P')
-
     def __str__(self):
         return self.first_name + " " + self.last_name
 
@@ -35,7 +28,7 @@ class ProviderForm(ModelForm):
     class Meta:
         model = Provider
         fields = '__all__'
-        # exclude = ['user']
+        exclude = ['user']
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
