@@ -11,7 +11,7 @@ def profile(request):
     patient = Patient.objects.get(user_id=user.id)
 
     context = {
-        'patient': patient,
+        'profile': patient,
         'user': user
     }
 

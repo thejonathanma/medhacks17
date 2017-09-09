@@ -119,7 +119,7 @@ function bundleCSS() {
 }
 
 function runserver() {
-    /*var args = [options.app, 'runserver'];
+    var args = [options.app, 'runserver'];
     var python = process.env['VIRTUAL_ENV'] + '/bin/python';
     var runserver = spawn(python, args, {
         stdio: "inherit"
@@ -130,7 +130,7 @@ function runserver() {
         } else {
             util.log(util.colors.green('Django runserver exited normally.'));
         }
-    });*/
+    });
 }
 
 function rebuild(deploy) {
