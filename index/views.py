@@ -21,7 +21,7 @@ def create_account(request):
             login(request, user)
             return redirect('/create_patient_profile/')
         else:
-            print form.errors
+            print (form.errors)
     else:
         return render(request, "index/create_account.html", {'form': UserForm})
 
@@ -35,7 +35,7 @@ def create_patient_profile(request):
             patient.save()
             return redirect('/patient/profile/')
         else:
-            print form.errors
+            print (form.errors)
     else:
         form = PatientForm(instance=patient)
         return render(request, "index/create_profile.html", {'form': form})
