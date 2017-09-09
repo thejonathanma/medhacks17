@@ -2,28 +2,37 @@
 
 {% block title %}MedHacks 2017{% endblock %}
 
+{% load static %}
+{% load tags %}
+
 {% block content %}
-    <div>
-        <div class="image"></div>
-        <div>
-            <h1>Welcome, {{patient.first_name}} {{patient.last_name}}</h1>
-            <div>
-                <h2>Medical Record</h2>
-                <h2>Health Summaries</h2>
-                <h2>Providers</h2>
-                <h2>Messages</h2>
-                <h2>Settings</h2>
+<div class="profile border">
+    <div class="profile-header">
+        {% with patient.profile_picture as url %}
+        {% with "/static/index/images/"|addstr:url as prof_pic %}
+        <div class="image" style="background-image: url('{{prof_pic}}');"></div>
+        {% endwith %}
+        {% endwith %}
+        <div class="profile-header-text border">
+            <h1 class="profile-header-text-title">Welcome, {{patient.first_name}} {{patient.last_name}}</h1>
+            <div class="profile-header-options">
+                <a><h2>Medical Record</h2></a>
+                <a><h2>Health Summaries</h2></a>
+                <a><h2>Providers</h2></a>
+                <a><h2>Messages</h2></a>
+                <a><h2>Settings</h2></a>
             </div>
         </div>
     </div>
-    <div>
-        <div class="information-quickview">
+    <div class="border profile-information">
+        <div class="border information-quickview">
             <h3>DOB: {{patient.dob}}</h3>
             <h3>Email: {{user.email}}</h3>
             <h3>Phone Number: {{patient.phone_number}}</h3>
             <h3>Address: {{patient.address}}, {{patient.city}}, {{patient.state}}, {{patient.zip_code}}</h3>
         </div>
-        <div class="updates">
+        <div class="border updates">
         </div>
     </div>
+</div>
 {% endblock %}

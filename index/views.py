@@ -24,14 +24,18 @@ def create_account(request):
     else:
         return render(request, "index/create_account.html", {'form': UserForm})
 
+def upload_file(f):
+    with f.upload_to as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
 def create_patient_profile(request):
     patient = Patient.objects.get(user_id=request.user.id)
 
     if request.method == 'POST':
-        form = PatientForm(request.POST, instance=patient)
+        form = PatientForm(request.POST, request.FILES, instance=patient)
         if form.is_valid():
-            patient = form.save(commit=False)
-            patient.save()
+            patient = form.save()
             return redirect('/patient/profile/')
         else:
             print form.errors
