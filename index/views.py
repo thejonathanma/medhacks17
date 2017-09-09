@@ -32,7 +32,7 @@ def create_patient_profile(request):
         if form.is_valid():
             patient = form.save(commit=False)
             patient.save()
-            return redirect('/')
+            return redirect('/patient/profile/')
         else:
             print form.errors
     else:
