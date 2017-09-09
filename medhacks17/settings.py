@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'medhacks17.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test',
+        'NAME': 'medhacks17',
         'USER': 'jonathan',
         'PASSWORD': '',
         'HOST': 'localhost',
