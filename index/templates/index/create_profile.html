@@ -1,0 +1,10 @@
+<!Doctype html>
+<html>
+    <body>
+        <form action="/create_patient_profile/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
