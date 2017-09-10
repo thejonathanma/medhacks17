@@ -16,17 +16,14 @@ class Provider(models.Model):
     profile_picture = models.FileField(upload_to='user_profile_images/', default=None, null=True)
     dob = models.DateField(default=None, null=True)
     insurance_accepted = ArrayField(models.CharField(max_length=200), default = [])
-<<<<<<< HEAD
     number_of_patients = models.IntegerField(default=None, null=True)
     office_address = models.TextField(default = "")
     office_city = models.CharField(max_length=200, default="")
     office_state = models.CharField(max_length=200, default="")
-=======
     address = models.TextField(default="")
     city = models.CharField(max_length=200, default="")
     state = models.CharField(max_length=200, default="")
     zip_code = models.CharField(max_length=5, default="")
->>>>>>> d62bd814bf7b252ba91b6a438499254a16c00cd4
 
     def __str__(self):
         return self.first_name + " " + self.last_name
@@ -35,12 +32,8 @@ class ProviderForm(ModelForm):
     class Meta:
         model = Provider
         fields = '__all__'
-<<<<<<< HEAD
-        # exclude = ['user']
-=======
         exclude = ['user']
 
->>>>>>> d62bd814bf7b252ba91b6a438499254a16c00cd4
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:

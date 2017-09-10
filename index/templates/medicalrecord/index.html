@@ -1,6 +1,32 @@
-<!Doctype html>
-<html>
-    <body>
-        <h1>Medical Records</h1>
-    </body>
-</html>
+{% extends '../base.html' %}
+
+{% block title %}MedHacks 2017{% endblock %}
+
+{% load static %}
+{% load tags %}
+
+{% block content %}
+
+<div class="profile border">
+    <div class="profile-header">
+      <h1>Your Medical Record</h1>
+
+        <div class="profile-header-options">
+            <h2>Immunizations</h2>
+            <h3>hi:{{med_record.vacc_date}}</h3>
+            <h3>hi:{{prescription.vaccinations}}</h3><br />
+            <h2>Past Prescriptions</h2>
+            <h3>hi:{{prescription.past_meds}}</h3><br />
+            <h2>Current Prescriptions</h2>
+            <h3>hi:{{prescription.current_meds}}</h3><br />
+            <h2>Allergies</h2>
+            <h3>hi:{{prescription.allergies}}</h3><br />
+            <h2>Test Results</h2><br />
+            <h2>Surgeries</h2>
+            <h3>hi:{{prescription.surgery}}</h3><br />
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
