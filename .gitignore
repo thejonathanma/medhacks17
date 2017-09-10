@@ -94,3 +94,4 @@ ENV/
 **/js/bundle.js
 **/migrations
 .DS_Store
+gulpfile.js
